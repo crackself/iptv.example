@@ -12,19 +12,23 @@ android {
 
     buildscript {
         repositories {
-            google() // Android Gradle 插件的主要仓库
-            maven() // 替代 jcenter（jcenter 已停止服务）
+            google() // 必须包含，因为 Android Gradle 插件发布在这里
+            mavenCentral() // 替代 jcenter
+            // 国内镜像（如需要更快下载速度）
+            maven { url 'https://maven.aliyun.com/repository/google' }
+            maven { url 'https://maven.aliyun.com/repository/central' }
         }
         dependencies {
             classpath 'com.android.tools.build:gradle:7.3.1'
         }
     }
-
+    
     allprojects {
         repositories {
             google()
             mavenCentral()
-            maven()
+            maven { url 'https://maven.aliyun.com/repository/google' } // 国内镜像
+            maven { url 'https://maven.aliyun.com/repository/central' } // 国内镜像
         }
     }
 
