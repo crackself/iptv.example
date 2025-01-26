@@ -11,6 +11,7 @@ android {
         versionCode 1  // 可修改为版本号
         versionName "1.0"  // 可修改为版本名称
         multiDexEnabled true  // 启用多 dex 支持
+        namespace 'com.custom.iptv'  // 设置命名空间
     }
 
     buildTypes {
