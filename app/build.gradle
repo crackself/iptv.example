@@ -5,7 +5,7 @@ android {
     buildToolsVersion "33.0.2"  // 对应最新构建工具版本
 
     defaultConfig {
-        applicationId "com.custom.iptv"
+        applicationId "com.example.iptv"
         minSdkVersion 15  // 设置为 15（Android 4.0.3）
         targetSdkVersion 33  // 设置为最新 SDK 版本
         versionCode 1  // 可修改为版本号
