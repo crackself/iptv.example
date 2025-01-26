@@ -1,18 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-android {
-    compileSdkVersion 33
-    defaultConfig {
-        applicationId "com.custom.iptv"
-        minSdkVersion 14 // 支持 Android 4.0+
-        targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
-    }
-}
 
 buildscript {
     repositories {
-        jcenter()
+        google()  // 必须包含的 Google 仓库
+        mavenCentral()  // 替代 jcenter
+        // 国内镜像加速（可选）
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
@@ -21,6 +15,10 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        google()  // 必须包含的 Google 仓库
+        mavenCentral()  // 替代 jcenter
+        // 国内镜像加速（可选）
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
     }
 }
