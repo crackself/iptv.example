@@ -1,4 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.custom.iptv"
+        minSdkVersion 14 // 支持 Android 4.0+
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
 buildscript {
     repositories {
         jcenter()
