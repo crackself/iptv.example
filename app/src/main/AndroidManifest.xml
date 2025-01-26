@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    <!-- android:package="com.example.iptv" 这个属性已被弃用，使用 build.gradle 来设置命名空间 -->
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
+
+    <!-- 删除了弃用的 android:package 属性 -->
 
     <application
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+
+        <!-- MainActivity 声明 -->
         <activity
             android:name="com.custom.iptv.MainActivity"
-            android:exported="true">  <!-- 显式设置 android:exported 属性 -->
-            android:label="@string/app_name"
+            android:exported="true"   <!-- 显式设置 android:exported 属性 -->
+            android:label="@string/app_name">  <!-- 移动到正确的位置 -->
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
