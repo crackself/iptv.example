@@ -1,25 +1,34 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33 // 使用最新的 SDK 版本
-    buildToolsVersion "33.0.2" // 对应最新工具版本
+    compileSdkVersion 33  // 使用最新 SDK 版本，兼容性最好
+    buildToolsVersion "33.0.2"  // 对应最新构建工具版本
 
     defaultConfig {
         applicationId "com.custom.iptv"
-        minSdkVersion 16 // Android Gradle 插件最低支持 API 16
-        targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 15  // 设置为 15（Android 4.0.3）
+        targetSdkVersion 33  // 设置为最新 SDK 版本
+        versionCode 1  // 可修改为版本号
+        versionName "1.0"  // 可修改为版本名称
+        multiDexEnabled true  // 启用多 dex 支持
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false  // 不启用代码压缩
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // 配置仓库
+    repositories {
+        google()  // 必须包含
+        mavenCentral()  // 替代 jcenter
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
     }
 }
 
 dependencies {
-    // 添加任何必要的依赖
+    implementation 'androidx.multidex:multidex:2.0.1'  // 支持多 dex
 }
