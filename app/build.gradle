@@ -12,11 +12,16 @@ android {
         versionName "1.0"
     }
 
-    repositories {
-        google()
-        mavenCentral()
+    buildscript {
+        repositories {
+            google() // 必须包含
+            mavenCentral() // 替代 jcenter（jcenter 已停止服务）
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:7.3.1'
+        }
     }
-
+    
     buildTypes {
         release {
             minifyEnabled false
