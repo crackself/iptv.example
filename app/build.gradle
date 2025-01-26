@@ -5,23 +5,29 @@ android {
     buildToolsVersion "26.0.1"
 
     defaultConfig {
-        applicationId "com.example.iptv"
+        applicationId "com.custom.iptv"
         minSdkVersion 9
         targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
     }
 
     buildscript {
         repositories {
-            google() // 必须包含
-            mavenCentral() // 替代 jcenter（jcenter 已停止服务）
+            google() // Android Gradle 插件的主要仓库
+            maven() // 替代 jcenter（jcenter 已停止服务）
         }
         dependencies {
             classpath 'com.android.tools.build:gradle:7.3.1'
         }
     }
-    
+
+    allprojects {
+        repositories {
+            google()
+            mavenCentral()
+            maven()
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
