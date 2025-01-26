@@ -1,10 +1,8 @@
 name: Build APK for Android 4.0+
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  # 支持手动触发
+  workflow_dispatch:
 
 jobs:
   build:
