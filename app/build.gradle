@@ -1,41 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 33 // 使用最新的 SDK 版本
+    buildToolsVersion "33.0.2" // 对应最新工具版本
 
     defaultConfig {
         applicationId "com.custom.iptv"
-        minSdkVersion 9
+        minSdkVersion 16 // Android Gradle 插件最低支持 API 16
         targetSdkVersion 33
-    }
-
-    buildscript {
-        repositories {
-            google() // 必须包含，因为 Android Gradle 插件发布在这里
-            mavenCentral() // 替代 jcenter
-            // 国内镜像（如需要更快下载速度）
-            maven { url 'https://maven.aliyun.com/repository/google' }
-            maven { url 'https://maven.aliyun.com/repository/central' }
-        }
-        dependencies {
-            classpath 'com.android.tools.build:gradle:7.3.1'
-        }
-    }
-    
-    allprojects {
-        repositories {
-            google()
-            mavenCentral()
-            maven { url 'https://maven.aliyun.com/repository/google' } // 国内镜像
-            maven { url 'https://maven.aliyun.com/repository/central' } // 国内镜像
-        }
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+dependencies {
+    // 添加任何必要的依赖
 }
