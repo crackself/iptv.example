@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.iptv;
+package com.custom.iptv;
 
 import android.app.Activity;
 import android.app.AlertDialog;
